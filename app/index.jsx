@@ -1,21 +1,17 @@
-import { Link } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-// import { Text } from "nativewind";
-
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
+import CustomButton from "../components/CustomButton";
+import { router } from "expo-router";
 export default function App() {
   return (
-    <SafeAreaView
-      className="bg-primary"
-      styles={{ height: "100%", backgroundColor: "black" }}
-    >
+    <SafeAreaView className="bg-primary" style={{ height: "100%" }}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View
           style={{
             width: "100%",
-            height: "100%",
+            minHeight: "85vh",
             justifyContent: "center",
             alignItems: "center",
             paddingHorizontal: 16,
@@ -52,23 +48,27 @@ export default function App() {
               resizeMode="contain"
             />
           </View>
-          <Text className="font-pregular"
-              style={{fontSize: 14, color: "#B3AEC6", textAlign: "center", marginTop: 28}}
+          <Text
+            className="font-pregular"
+            style={{
+              fontSize: 14,
+              color: "#B3AEC6",
+              textAlign: "center",
+              marginTop: 28,
+            }}
           >
             Where creativity meets innovation: embark in journy of limitless
             exploration with Aora
           </Text>
+          <CustomButton
+            title="Continue with Email"
+            handlePress={() => {
+              router.push("/sign-in");
+            }}
+          />
         </View>
       </ScrollView>
+      <StatusBar style="light" backgroundColor="#161622" />
     </SafeAreaView>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });

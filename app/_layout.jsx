@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from "react-native"; //rnfcs
 import React, { useEffect } from "react";
-import { Slot, SplashScreen, Stack } from "expo-router"; // renders the current child route
+import {  SplashScreen, Stack } from "expo-router"; // renders the current child route
 import { useFonts } from "expo-font";
 
 SplashScreen.preventAutoHideAsync();
@@ -36,12 +35,3 @@ const RootLayout = () => {
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
